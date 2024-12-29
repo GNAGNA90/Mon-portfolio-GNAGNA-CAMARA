@@ -84,7 +84,7 @@ img, video {
 .about-video {
     flex: 1;
     min-width: 300px;
-    max-width: 80%; /* Réduit la taille de la vidéo */
+    max-width: 70%; /* Réduit la taille de la vidéo */
     margin: auto; /* Centre la vidéo horizontalement */
     position: relative;
     overflow: hidden;
