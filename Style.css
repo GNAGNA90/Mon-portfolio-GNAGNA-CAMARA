@@ -10,7 +10,7 @@ body {
 
 img, video {
     max-width: 100%; /* S'adapte à la largeur de l'écran */
-    height: auto;
+    height: auto;    /* Maintient les proportions */
 }
 
 /* Navbar */
@@ -26,11 +26,15 @@ img, video {
 
 /* Hero Section */
 .hero {
-    background: url('f.jpg') no-repeat center/cover;
+    background: url('f.jpg') no-repeat center/cover; /* Remplit l'écran */
     color: #fff;
     text-align: center;
-    padding: 200px 20px; /* Réduit l'espace pour mobile */
+    padding: 150px 20px; /* Réduit l'espace pour mobile */
     min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {
@@ -61,28 +65,53 @@ img, video {
     transform: scale(1.1);
 }
 
-/* Video Styling */
+/* About Section */
+.about-container {
+    max-width: 1200px;
+    margin: auto; /* Centre le conteneur */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
 .about-video {
+    flex: 1;
+    min-width: 300px;
+    max-width: 80%; /* Réduit la taille de la vidéo */
+    margin: auto; /* Centre la vidéo horizontalement */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin: 20px auto; /* Centré */
-    max-width: 80%; /* Réduit la taille sur les écrans plus petits */
 }
 
 .about-video video {
     width: 100%;
-    border: 3px solid #6a11cb; /* Ajout de bordure élégante */
+    border: 3px solid #6a11cb; /* Bordure élégante */
     border-radius: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Menu en colonne */
+        align-items: flex-start;
+    }
+
+    .menu a {
+        font-size: 1.2em;
+        margin: 5px 0;
+    }
+
     .hero {
-        padding: 150px 20px;
-        text-align: center;
-        background-size: cover; /* Assure une bonne adaptation */
+        padding: 100px 20px; /* Moins d'espace sur mobile */
     }
 
     .hero h1 {
@@ -93,7 +122,11 @@ img, video {
         font-size: 1.2em;
     }
 
+    .about-container {
+        flex-direction: column; /* Empile les éléments */
+    }
+
     .about-video {
-        max-width: 90%; /* Réduit davantage la taille sur mobile */
+        max-width: 90%; /* Réduit davantage la vidéo sur mobile */
     }
 }
