@@ -1,3 +1,4 @@
+/* Base Styling */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,13 +8,8 @@ body {
     background: #f4f4f9;
 }
 
-img {
-    max-width: 100%; /* Limite la largeur à celle de l'écran */
-    height: auto;    /* Maintient les proportions */
-}
-
-video {
-    max-width: 100%; /* Adapte les vidéos */
+img, video {
+    max-width: 100%; /* S'adapte à la largeur de l'écran */
     height: auto;
 }
 
@@ -28,159 +24,76 @@ video {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.menu a:hover {
-    color: #ffd700;
-}
-
-/* Hero section */
+/* Hero Section */
 .hero {
     background: url('f.jpg') no-repeat center/cover;
     color: #fff;
     text-align: center;
-    padding: 315px 80px;
+    padding: 200px 20px; /* Réduit l'espace pour mobile */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
 }
 
 .hero h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 10px;
-    color: white;
-    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Élégance avec ombrage */
 }
 
 .hero h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 20px;
-    color: white;
-    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero .btn {
-    padding: 10px 20px;
-    background: #2575fc;
-    color: #fff;
+    padding: 12px 25px;
+    background: #ffd700;
+    color: #000;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .hero .btn:hover {
-    background: #ffd700;
-    color: #000;
-}
-
-/* Section About */
-.section.about {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 20px;
-}
-
-.about-container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.about-text, .about-video {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* Portfolio */
-.section.portfolio {
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes flexibles */
-    gap: 20px;
-}
-
-/* Contact */
-.contact {
-    padding: 40px 20px;
-    background: #ffffff;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer */
-.footer {
-    background: #333;
+    background: #2575fc;
     color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9em;
+    transform: scale(1.1);
+}
+
+/* Video Styling */
+.about-video {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; /* Centré */
+    max-width: 80%; /* Réduit la taille sur les écrans plus petits */
+}
+
+.about-video video {
+    width: 100%;
+    border: 3px solid #6a11cb; /* Ajout de bordure élégante */
+    border-radius: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 0 10px; /* Réduction des marges globales */
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px; /* Espacement entre les éléments */
-    }
-
-    .menu a {
-        font-size: 1.2em; /* Réduit la taille des liens */
-        margin: 5px 0; /* Espacement vertical */
-    }
-
     .hero {
-        padding: 150px 20px; /* Moins d'espace pour mobile */
+        padding: 150px 20px;
         text-align: center;
-        background-size: cover; /* Assure une bonne adaptation de l'image */
+        background-size: cover; /* Assure une bonne adaptation */
     }
 
     .hero h1 {
-        font-size: 2em; /* Texte réduit */
+        font-size: 2em;
     }
 
     .hero h2 {
         font-size: 1.2em;
     }
 
-    .about-container {
-        flex-direction: column; /* Empile les sections */
-        gap: 20px;
-    }
-
-    .about-text, .about-video {
-        min-width: 100%; /* Prend toute la largeur */
-    }
-
-    .projects-container {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
-
-    .contact {
-        padding: 20px 10px; /* Réduction des marges */
+    .about-video {
+        max-width: 90%; /* Réduit davantage la taille sur mobile */
     }
 }
