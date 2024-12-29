@@ -1,4 +1,3 @@
-/* Base Styling */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -8,111 +7,95 @@ body {
     background: #f4f4f9;
 }
 
-img, video {
-    max-width: 100%; /* S'adapte à la largeur de l'écran */
+img {
+    max-width: 100%; /* Limite la largeur à celle de l'écran */
     height: auto;    /* Maintient les proportions */
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-    color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero Section */
-.hero {
-    background: url('f.jpg') no-repeat center/cover; /* Remplit l'écran */
-    color: #fff;
-    text-align: center;
-    padding: 150px 20px; /* Réduit l'espace pour mobile */
-    min-height: 100vh; /* Prend toute la hauteur de l'écran */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Élégance avec ombrage */
-}
-
-.hero h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.hero .btn {
-    padding: 12px 25px;
-    background: #ffd700;
-    color: #000;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.hero .btn:hover {
-    background: #2575fc;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-/* About Section */
-.about-container {
-    max-width: 1200px;
-    margin: auto; /* Centre le conteneur */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.about-text {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-}
-
-.about-video {
-    flex: 1;
-    min-width: 300px;
-    max-width: 50%; /* Réduit la taille de la vidéo */
-    margin: auto; /* Centre la vidéo horizontalement */
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-right:50px;
-}
-
-.about-video video {
+/* Ajout d'un conteneur global responsive */
+.container {
     width: 100%;
-    border: 3px solid #6a11cb; /* Bordure élégante */
-    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Menu en colonne */
-        align-items: flex-start;
+    .container {
+        padding: 10px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column; /* Affiche le menu en colonne sur mobile */
+        align-items: center;
     }
 
     .menu a {
-        font-size: 1.2em;
-        margin: 5px 0;
+        margin: 5px 0; /* Espacement réduit entre les liens */
+        font-size: 1.2em; /* Réduction de la taille sur mobile */
     }
 
     .hero {
-        padding: 100px 20px; /* Moins d'espace sur mobile */
+        padding: 150px 20px; /* Ajustement de l'espacement */
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Taille du titre ajustée */
+    }
+
+    .hero h2 {
+        font-size: 1.8em; /* Taille du sous-titre ajustée */
+    }
+
+    .hero .btn {
+        font-size: 1em; /* Bouton plus petit */
+        padding: 8px 15px; /* Moins d'espacement */
+    }
+
+    .about-text, .about-video {
+        flex: 1 1 100%; /* Prend toute la largeur sur mobile */
+        margin-bottom: 20px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .hobbies-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .contact {
+        padding: 20px; /* Réduction du padding sur mobile */
+        margin: 20px auto; /* Réduction de la marge */
+    }
+
+    .contact h1 {
+        font-size: 2em; /* Titre réduit sur mobile */
+    }
+
+    .contact input, .contact textarea {
+        font-size: 1em; /* Taille uniforme sur mobile */
+    }
+
+    .portfolio h1 {
+        font-size: 2.2em; /* Taille ajustée */
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
+
+/* Ajout de styles pour les très petits écrans */
+@media (max-width: 480px) {
+    .menu a {
+        font-size: 1em; /* Réduction supplémentaire des liens */
+    }
+
+    .hero {
+        padding: 100px 15px;
     }
 
     .hero h1 {
@@ -120,14 +103,23 @@ img, video {
     }
 
     .hero h2 {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
-    .about-container {
-        flex-direction: column; /* Empile les éléments */
+    .contact {
+        padding: 15px;
+        margin: 10px auto;
     }
 
-    .about-video {
-        max-width: 90%; /* Réduit davantage la vidéo sur mobile */
+    .contact h1 {
+        font-size: 1.8em;
+    }
+
+    .hobbies-container {
+        grid-template-columns: 1fr; /* Toujours une seule colonne */
+    }
+
+    .footer {
+        font-size: 0.8em; /* Texte réduit dans le footer */
     }
 }
