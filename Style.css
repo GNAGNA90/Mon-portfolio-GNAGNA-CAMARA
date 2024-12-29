@@ -11,115 +11,518 @@ img {
     max-width: 100%; /* Limite la largeur à celle de l'écran */
     height: auto;    /* Maintient les proportions */
 }
-
-/* Ajout d'un conteneur global responsive */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px;
-}
-
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
+        flex-direction: column; /* Change la disposition en colonne */
+        padding: 1em;
     }
 
     .menu {
         display: flex;
         flex-direction: column; /* Affiche le menu en colonne sur mobile */
-        align-items: center;
-    }
-
-    .menu a {
-        margin: 5px 0; /* Espacement réduit entre les liens */
-        font-size: 1.2em; /* Réduction de la taille sur mobile */
     }
 
     .hero {
-        padding: 150px 20px; /* Ajustement de l'espacement */
+        font-size: 1.2em; /* Réduit la taille du texte */
     }
+}
 
-    .hero h1 {
-        font-size: 2.5em; /* Taille du titre ajustée */
-    }
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .hero h2 {
-        font-size: 1.8em; /* Taille du sous-titre ajustée */
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
-    .hero .btn {
-        font-size: 1em; /* Bouton plus petit */
-        padding: 8px 15px; /* Moins d'espacement */
-    }
+.logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
 
-    .about-text, .about-video {
-        flex: 1 1 100%; /* Prend toute la largeur sur mobile */
-        margin-bottom: 20px;
-    }
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
 
-    .skills-container {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
+.menu a:hover {
+    color: #ffd700;
+}
 
-    .hobbies-container {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
+/* Hero section */
+.hero {
+    background: url('f.jpg') no-repeat center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 315px 80px;
+}
 
-    .contact {
-        padding: 20px; /* Réduction du padding sur mobile */
-        margin: 20px auto; /* Réduction de la marge */
-    }
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}
 
-    .contact h1 {
-        font-size: 2em; /* Titre réduit sur mobile */
-    }
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+}
 
-    .contact input, .contact textarea {
-        font-size: 1em; /* Taille uniforme sur mobile */
-    }
+.hero h3 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
 
-    .portfolio h1 {
-        font-size: 2.2em; /* Taille ajustée */
-    }
+.hero .btn {
+    padding: 10px 20px;
+    background: #2575fc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
+.hero .btn:hover {
+    background: #ffd700;
+    color: #000;
+}
+
+h2  {
+    color: #2575fc;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+h1  {
+  color: #2575fc;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 60px;
+   
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Section About */
+.section.about {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    height: 95vh; /* Prend toute la hauteur de l'écran */
+    margin: 0;
+}
+
+.about-container {
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 100%;
+    
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(205, 213, 218, 0.9); /* Optionnel : une couleur de fond légère */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about-text h1 {
+    font-size: 2em;
+}
+
+.about-text h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.about-video {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.section.skills {
+    padding: 10px 20px 50px;
+    text-align: center;
+    background: #fff;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    height: 65vh;
+    
+}
+
+.skill {
+    background: #f9f9ff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #6a11cb;
+}
+
+.skill h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #2575fc;
+   
+}
+
+.skill p {
+    color: #555;
+    font-size: 0.95em;
+}
+.section.portfolio {
+    padding: 5px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.portfolio h1 {
+    font-size: 3em;
+    color: #2575fc; /* Bleu moderne */
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
+    gap: 20px; /* Espacement entre les cartes */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrer la grille */
+}
+
+/* Grille Responsive */
+@media (max-width: 768px) {
     .projects-container {
         grid-template-columns: 1fr; /* Une seule colonne sur mobile */
     }
 }
 
-/* Ajout de styles pour les très petits écrans */
-@media (max-width: 480px) {
-    .menu a {
-        font-size: 1em; /* Réduction supplémentaire des liens */
+
+.project {
+    background-color: #f9f9ff; /* Fond doux */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Élève légèrement la carte */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project h2 {
+    font-size: 1.4em;
+    color: #2575fc;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.project p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project .technologies {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+    margin-top: auto;
+}
+
+.project button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #2575fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio h1 {
+        font-size: 2.2em;
     }
 
-    .hero {
-        padding: 100px 15px;
+    .projects-container {
+        grid-template-columns: 1fr;
     }
+}
 
-    .hero h1 {
-        font-size: 2em;
-    }
+.hobbies {
+    padding: 10px 40px;
+    color: white;
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 1200px; /* Ajusté pour un alignement plus harmonieux */
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    min-height: 80vh; /* S'adapte mieux sur les écrans */
+}
 
-    .hero h2 {
-        font-size: 1.5em;
-    }
+.hobbies h1 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-family: 'Georgia', serif; /* Police élégante */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espacement entre les lettres */
+}
 
-    .contact {
-        padding: 15px;
-        margin: 10px auto;
-    }
+.hobbies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
 
-    .contact h1 {
-        font-size: 1.8em;
+.hobby {
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hobby:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 1); /* Rend la carte plus lumineuse */
+}
+
+.hobby h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #2575fc;
+    text-transform: capitalize;
+}
+
+.hobby p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hobbies h1 {
+        font-size: 2.5em; /* Réduction du titre sur les petits écrans */
     }
 
     .hobbies-container {
-        grid-template-columns: 1fr; /* Toujours une seule colonne */
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
+
+.contact {
+    padding: 60px 40px;
+    background: #ffffff; /* Fond blanc pur */
+    border: 1px solid #ddd; /* Bordure subtile */
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    height: 65vh;
+}
+
+.contact h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333; /* Titre sobre */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555; /* Texte en gris doux */
+    line-height: 1.6;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement uniforme entre les champs */
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9; /* Fond légèrement gris */
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #2575fc; /* Bleu sobre au focus */
+    background: #fff;
+    outline: none;
+}
+
+.contact button {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #fff;
+    background-color: #2575fc; /* Bleu moderne */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .contact h1 {
+        font-size: 2em; /* Titre réduit sur mobile */
     }
 
-    .footer {
-        font-size: 0.8em; /* Texte réduit dans le footer */
+    .contact p {
+        font-size: 1em;
     }
+}
+
+.footer {
+    background: #333; /* Fond sombre */
+    color: #fff; /* Texte en blanc */
+    padding: 20px 0; /* Espacement réduit */
+    text-align: center;
+    font-size: 0.9em; /* Texte légèrement réduit */
+    margin-top: 40px; /* Ajout d'espace au-dessus du footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    color: #ffd700; /* Titre en doré */
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 0;
+    color: #ccc; /* Texte légèrement atténué */
 }
