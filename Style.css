@@ -30,7 +30,7 @@ img, video {
     color: #fff;
     text-align: center;
     padding: 150px 20px; /* Réduit l'espace pour mobile */
-    min-height: 88vh; /* Prend toute la hauteur de l'écran */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,7 +84,7 @@ img, video {
 .about-video {
     flex: 1;
     min-width: 300px;
-    max-width: 70%; /* Réduit la taille de la vidéo */
+    max-width: 50%; /* Réduit la taille de la vidéo */
     margin: auto; /* Centre la vidéo horizontalement */
     position: relative;
     overflow: hidden;
