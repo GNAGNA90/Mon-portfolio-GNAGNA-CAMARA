@@ -7,6 +7,67 @@ body {
     background: #f4f4f9;
 }
 
+img {
+    max-width: 100%; /* Limite la largeur à celle de l'écran */
+    height: auto;    /* Maintient les proportions */
+}
+
+/* AJOUT POUR RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Réduit les marges */
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column; /* Menu en colonne */
+        align-items: flex-start;
+    }
+
+    .menu a {
+        font-size: 1em; /* Réduit la taille des liens */
+        margin: 5px 0; /* Espacement entre les liens */
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 150px 20px; /* Réduit l'espace pour mobile */
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Taille adaptée pour le texte */
+    }
+
+    .hero h2 {
+        font-size: 1.2em;
+    }
+
+    /* About Section */
+    .about-container {
+        flex-direction: column; /* Empile les sections */
+        gap: 20px;
+    }
+
+    .about-text, .about-video {
+        min-width: 100%; /* Occupe toute la largeur */
+    }
+
+    /* Portfolio */
+    .projects-container {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    /* Contact */
+    .contact {
+        padding: 30px 10px; /* Réduction des marges */
+    }
+
+    .contact form {
+        gap: 10px; /* Réduit l'espacement entre les champs */
+    }
+}
+
 /* Navbar */
 .navbar {
     display: flex;
@@ -17,7 +78,6 @@ body {
     color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 .logo {
     display: flex;
     align-items: center;
@@ -506,4 +566,3 @@ ul li {
     margin: 0;
     color: #ccc; /* Texte légèrement atténué */
 }
-
